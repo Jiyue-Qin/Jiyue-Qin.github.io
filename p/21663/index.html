@@ -27,23 +27,39 @@
     var CONFIG = {"hostname":"qinjiyue.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="解决idea2020的最新版本出现maven依赖已经导入，而且pom文件正确，java文件中import路径正确，但是运行时依然报错找不到包的情况。">
+  <meta name="description" content="由于windows系统升级，导致VMware虚拟机被强制删除，重装的时候了解到win10系统自带的虚拟机工具Hyper-V也不错，自己尝试使用了一下，下面是安装步骤与一些自己踩到的坑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="idea2020版spring项目依赖成功导入但报错找不到包的解决方案">
-<meta property="og:url" content="https://qinjiyue.gitee.io/p/25879/index.html">
+<meta property="og:title" content="win10系统自带虚拟机Hyper-V安装linux代替VMware">
+<meta property="og:url" content="https://qinjiyue.gitee.io/p/21663/index.html">
 <meta property="og:site_name" content="Jiyue&#39;s Blog">
-<meta property="og:description" content="解决idea2020的最新版本出现maven依赖已经导入，而且pom文件正确，java文件中import路径正确，但是运行时依然报错找不到包的情况。">
+<meta property="og:description" content="由于windows系统升级，导致VMware虚拟机被强制删除，重装的时候了解到win10系统自带的虚拟机工具Hyper-V也不错，自己尝试使用了一下，下面是安装步骤与一些自己踩到的坑">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201103145535.png">
-<meta property="article:published_time" content="2020-11-03T06:38:41.000Z">
-<meta property="article:modified_time" content="2020-11-03T07:14:28.497Z">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127160120.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127163604.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127164000.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127164812.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127165839.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130093837.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130094202.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130100746.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101128.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101527.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101635.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101810.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130102049.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130102210.png">
+<meta property="og:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130102534.png">
+<meta property="article:published_time" content="2020-11-27T02:09:21.000Z">
+<meta property="article:modified_time" content="2020-11-30T06:43:14.241Z">
 <meta property="article:author" content="Jiyue">
-<meta property="article:tag" content="IDEA">
 <meta property="article:tag" content="软件">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content="系统">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201103145535.png">
+<meta name="twitter:image" content="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127160120.png">
 
-<link rel="canonical" href="https://qinjiyue.gitee.io/p/25879/">
+<link rel="canonical" href="https://qinjiyue.gitee.io/p/21663/">
 
 
 <script id="page-configurations">
@@ -56,7 +72,7 @@
   };
 </script>
 
-  <title>idea2020版spring项目依赖成功导入但报错找不到包的解决方案 | Jiyue's Blog</title>
+  <title>win10系统自带虚拟机Hyper-V安装linux代替VMware | Jiyue's Blog</title>
   
 
 
@@ -223,7 +239,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qinjiyue.gitee.io/p/25879/">
+    <link itemprop="mainEntityOfPage" href="https://qinjiyue.gitee.io/p/21663/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/wechat.jpg">
@@ -236,7 +252,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          idea2020版spring项目依赖成功导入但报错找不到包的解决方案
+          win10系统自带虚拟机Hyper-V安装linux代替VMware
         </h1>
 
         <div class="post-meta">
@@ -247,7 +263,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-11-03 14:38:41" itemprop="dateCreated datePublished" datetime="2020-11-03T14:38:41+08:00">2020-11-03</time>
+              <time title="创建时间：2020-11-27 10:09:21" itemprop="dateCreated datePublished" datetime="2020-11-27T10:09:21+08:00">2020-11-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,7 +276,7 @@
             </span>
 
           
-            <span id="/p/25879/" class="post-meta-item leancloud_visitors" data-flag-title="idea2020版spring项目依赖成功导入但报错找不到包的解决方案" title="热度">
+            <span id="/p/21663/" class="post-meta-item leancloud_visitors" data-flag-title="win10系统自带虚拟机Hyper-V安装linux代替VMware" title="热度">
               <span class="post-meta-item-icon">
                 <i class="fa fa-thermometer-three-quarters"></i>
               </span>
@@ -276,8 +292,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/p/25879/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/p/25879/" itemprop="commentCount"></span>
+    <a title="valine" href="/p/21663/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/p/21663/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -287,16 +303,16 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>326</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
-            <div class="post-description">解决idea2020的最新版本出现maven依赖已经导入，而且pom文件正确，java文件中import路径正确，但是运行时依然报错找不到包的情况。</div>
+            <div class="post-description">由于windows系统升级，导致VMware虚拟机被强制删除，重装的时候了解到win10系统自带的虚拟机工具Hyper-V也不错，自己尝试使用了一下，下面是安装步骤与一些自己踩到的坑</div>
 
         </div>
       </header>
@@ -307,12 +323,55 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近安装了idea2020版本，在启动springboot的项目时，出现找不到包的情况，再确认maven依赖添加正确，pom文件正确，java文件的improt路径正确后，还是不能正常启动，上网查了下发现不只我一个出现这个问题，百度之后找到问题所在。</p>
-<h1 id="报错原因："><a href="#报错原因：" class="headerlink" title="报错原因："></a>报错原因：</h1><p>IDEA启动程序按钮和maven的build使用的jar包环境不一样。</p>
-<h1 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h1><p>设置idea构建/运行操作委托给maven</p>
-<p>具体设置：<br>Settings搜索Runner,勾选delegate ide build/run actions to maven<br>注意jar版本要与当前版本对应，注意编码格式应该为UTF-8，而不是默认编码。</p>
-<p>(Settings在File菜单中，idea默认快捷键 ctrl + alt + a )</p>
-<p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201103145535.png" alt=""></p>
+        <p>Win10系统自带Hyper-V虚拟机工具，已经不需要额外再安装VM虚拟机，可以更快速的启动虚拟机并占用更少的资源。<br>下面是使用方法与步骤：</p>
+<h1 id="需要准备的工具与软件"><a href="#需要准备的工具与软件" class="headerlink" title="需要准备的工具与软件"></a>需要准备的工具与软件</h1><p>window 10 系统电脑<br>centOS 7 安装镜像文件（或其他Linux系统版本）<br>【centOS7 镜像地址：<a href="http://mirrors.aliyun.com/centos/7/isos/x86_64/" target="_blank" rel="noopener">阿里云镜像</a>、<a href="http://isoredirect.centos.org/centos/" target="_blank" rel="noopener">官网镜像</a>】</p>
+<h1 id="1-windows开启Hyper-V服务"><a href="#1-windows开启Hyper-V服务" class="headerlink" title="1. windows开启Hyper-V服务"></a>1. windows开启Hyper-V服务</h1><h2 id="1-1-打开控制面板"><a href="#1-1-打开控制面板" class="headerlink" title="1.1 打开控制面板"></a>1.1 打开控制面板</h2><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127160120.png" alt="打开控制面板"></p>
+<h2 id="1-2-开启Hyper-V服务"><a href="#1-2-开启Hyper-V服务" class="headerlink" title="1.2 开启Hyper-V服务"></a>1.2 开启Hyper-V服务</h2><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127163604.png" alt="开启服务"></p>
+<h2 id="1-3-按照提示重启电脑并运行Hyper-V服务"><a href="#1-3-按照提示重启电脑并运行Hyper-V服务" class="headerlink" title="1.3 按照提示重启电脑并运行Hyper-V服务"></a>1.3 按照提示重启电脑并运行Hyper-V服务</h2><p>在开始菜单可以找到windows服务选项<br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127164000.png" alt=""><br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127164812.png" alt="Hyper-V 管理器"><br><strong>到这里第一部分已经完成，下面开始配置网络和创建虚拟机。</strong></p>
+<h1 id="2-配置网关和其他项目"><a href="#2-配置网关和其他项目" class="headerlink" title="2. 配置网关和其他项目"></a>2. 配置网关和其他项目</h1><h2 id="2-1-新增虚拟交换机"><a href="#2-1-新增虚拟交换机" class="headerlink" title="2.1 新增虚拟交换机"></a>2.1 新增虚拟交换机</h2><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127165839.png" alt=""></p>
+<p><strong>点击创建虚拟交换机</strong></p>
+<p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130093837.png" alt=""></p>
+<p><strong>创建新的虚拟网络交换机（能够上外网的）</strong><br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130094202.png" alt=""><br>① 创建新的虚拟网络交换机，重命名该网络交换机<br>② 选择外部网络，选择要给虚拟机试用的网卡（一般当前计算机网卡），勾选 □允许管理操作系统共享此网络适配器<br>③ 点击确定完成新建</p>
+<span id = "jump" />
+
+<h2 id="2-2-创建虚拟机"><a href="#2-2-创建虚拟机" class="headerlink" title="2.2 创建虚拟机"></a>2.2 创建虚拟机</h2><h3 id="2-2-1-创建"><a href="#2-2-1-创建" class="headerlink" title="2.2.1 创建"></a>2.2.1 创建</h3><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130100746.png" alt=""><br>点击 新建=&gt;虚拟机 按提示点击 下一步</p>
+<h3 id="2-2-2-命名与选择安装位置"><a href="#2-2-2-命名与选择安装位置" class="headerlink" title="2.2.2 命名与选择安装位置"></a>2.2.2 命名与选择安装位置</h3><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101128.png" alt=""></p>
+<h3 id="2-2-3-选择虚拟机版本"><a href="#2-2-3-选择虚拟机版本" class="headerlink" title="2.2.3 选择虚拟机版本"></a>2.2.3 选择虚拟机版本</h3><p><strong>这里需要注意下，按照官网说法，第二代是支持CentOS7系统的，但是我用二代系统安装centOS7之后并不能正常使用，所以保险起见还是建议使用一代虚拟机版本</strong><br>选择后点击下一步<br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101527.png" alt=""></p>
+<h3 id="2-2-4-分配虚拟机内存"><a href="#2-2-4-分配虚拟机内存" class="headerlink" title="2.2.4 分配虚拟机内存"></a>2.2.4 分配虚拟机内存</h3><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101635.png" alt=""></p>
+<h3 id="2-2-5-配置虚拟机网络"><a href="#2-2-5-配置虚拟机网络" class="headerlink" title="2.2.5 配置虚拟机网络"></a>2.2.5 配置虚拟机网络</h3><p>在连接中选择刚刚配置的网络交换机（我这里命名为centos7）<br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101810.png" alt=""></p>
+<h3 id="2-2-6-连接虚拟硬盘-并指定虚拟机硬盘大小"><a href="#2-2-6-连接虚拟硬盘-并指定虚拟机硬盘大小" class="headerlink" title="2.2.6 连接虚拟硬盘 并指定虚拟机硬盘大小"></a>2.2.6 连接虚拟硬盘 并指定虚拟机硬盘大小</h3><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130102049.png" alt=""></p>
+<h3 id="2-2-7-安装选项"><a href="#2-2-7-安装选项" class="headerlink" title="2.2.7 安装选项"></a>2.2.7 安装选项</h3><p>我这里选择的是在本地安装自己下载的镜像文件<br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130102210.png" alt=""></p>
+<h3 id="2-2-8-摘要"><a href="#2-2-8-摘要" class="headerlink" title="2.2.8 摘要"></a>2.2.8 摘要</h3><p>浏览摘要确认硬件与安装信息，点击安装<br>安装完成后出现如下菜单与项目：<br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130102534.png" alt=""><br>到这里，linux虚拟机镜像已经安装完成，下一步就是Linux系统的安装（有基础的可以安装自己喜欢的linux版本，我安装的是CentOS 7）</p>
+<h1 id="3-已经遇到的问题与解决方法"><a href="#3-已经遇到的问题与解决方法" class="headerlink" title="3. 已经遇到的问题与解决方法"></a>3. 已经遇到的问题与解决方法</h1><h2 id="3-1-端口占用且查不到占用的进程问题"><a href="#3-1-端口占用且查不到占用的进程问题" class="headerlink" title="3.1 端口占用且查不到占用的进程问题"></a>3.1 端口占用且查不到占用的进程问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>本地启动IDEA做Java开发时，启动tomcat会出现一个端口占用的错误：<br>tomcat启动报错：Address localhost:1099 is already in use！</p>
+<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>这里安装的Hyper-V虚拟机会默认分配一些端口以便虚拟机使用。<br>默认启动端口: 1024 端口数: 13977<br>而由于tomcat默认的监视端口用到1099，所以会引起端口占用且查不到占用进程的问题。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>修改Hyper-V动态端口范围。参考博客：<a href="https://www.cnblogs.com/cheney256/articles/13375989.html" target="_blank" rel="noopener">雪域熊猫：修改Hyper-V动态端口范围</a></p>
+<p>以下步骤需要使用管理员权限操作cmd指令</p>
+<h4 id="1-关闭Hyper-V"><a href="#1-关闭Hyper-V" class="headerlink" title="1. 关闭Hyper-V"></a>1. 关闭Hyper-V</h4><p>关闭Hyper-V:</p>
+<blockquote>
+<p>dism.exe /Online /Disable-Feature:Microsoft-Hyper-V</p>
+</blockquote>
+<h4 id="2-修改动态端口范围"><a href="#2-修改动态端口范围" class="headerlink" title="2. 修改动态端口范围"></a>2. 修改动态端口范围</h4><blockquote>
+<p>#设置动态端口TCP范围<br>netsh int ipv4 set dynamicport tcp start=51555 num=13980</p>
+</blockquote>
+<blockquote>
+<p>#设置动态端口UDP范围<br>netsh int ipv4 set dynamicport udp start=51555 num=13980</p>
+</blockquote>
+<p>然后检查修改结果</p>
+<blockquote>
+<p>#查看动态端口范围<br>netsh int ipv4 show dynamicport tcp</p>
+</blockquote>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">协议 tcp 动态端口范围</span><br><span class="line">------------------</span><br><span class="line">启动端口 : 51555</span><br><span class="line">端口数 : 13980</span><br></pre></td></tr></table></figure>
+<h4 id="3-开启Hyper-V"><a href="#3-开启Hyper-V" class="headerlink" title="3. 开启Hyper-V"></a>3. 开启Hyper-V</h4><blockquote>
+<p>#启用Hyper-V<br>dism.exe /Online /Enable-Feature:Microsoft-Hyper-V /All<br>输出结果如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.18362.1</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.18363.752</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[100.0%]</span><br><span class="line">操作成功完成。</span><br><span class="line">重新启动 Windows 以完成该操作。</span><br><span class="line">是否立即重新启动计算机? (Y&#x2F;N)</span><br></pre></td></tr></table></figure>
+<p>根据提示按 ‘Y’ 进行系统重启，完成配置。</p>
+<h2 id="3-2-Linux系统安装后无法上网"><a href="#3-2-Linux系统安装后无法上网" class="headerlink" title="3.2 Linux系统安装后无法上网"></a>3.2 Linux系统安装后无法上网</h2><h3 id="问题原因-1"><a href="#问题原因-1" class="headerlink" title="问题原因"></a>问题原因</h3><p>可能是Linux系统的连接方式设置错误，或者是网络虚拟机配置问题</p>
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>如果时Linux系统的连接方式设置错误，请开启Linux系统网络连接，并将连接方式改为桥接模式；</li>
+<li>如果是网络虚拟机配置问题请重新按照教程<a href="#jump">2.1</a>部分重新安装网络交换机。</li>
+</ol>
 
     </div>
 
@@ -352,7 +411,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://qinjiyue.gitee.io/p/25879/" title="idea2020版spring项目依赖成功导入但报错找不到包的解决方案">https://qinjiyue.gitee.io/p/25879/</a>
+    <a href="https://qinjiyue.gitee.io/p/21663/" title="win10系统自带虚拟机Hyper-V安装linux代替VMware">https://qinjiyue.gitee.io/p/21663/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -364,8 +423,10 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/IDEA/" rel="tag"><i class="fa fa-tag"></i> IDEA</a>
               <a href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag"><i class="fa fa-tag"></i> 软件</a>
+              <a href="/tags/windows/" rel="tag"><i class="fa fa-tag"></i> windows</a>
+              <a href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag"><i class="fa fa-tag"></i> 系统</a>
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           </div>
 
         
@@ -373,13 +434,10 @@
 
         
     <div class="post-nav">
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/p/21663/" rel="prev" title="win10系统自带虚拟机Hyper-V安装linux代替VMware">
-      <i class="fa fa-chevron-left"></i> win10系统自带虚拟机Hyper-V安装linux代替VMware
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/p/19088/" rel="next" title="Hexo博客建立标签云hexo-tag-cloud及效果展示">
-      Hexo博客建立标签云hexo-tag-cloud及效果展示 <i class="fa fa-chevron-right"></i>
+    <a href="/p/25879/" rel="next" title="idea2020版spring项目依赖成功导入但报错找不到包的解决方案">
+      idea2020版spring项目依赖成功导入但报错找不到包的解决方案 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -443,7 +501,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#报错原因："><span class="nav-text">报错原因：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方案："><span class="nav-text">解决方案：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需要准备的工具与软件"><span class="nav-text">需要准备的工具与软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-windows开启Hyper-V服务"><span class="nav-text">1. windows开启Hyper-V服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-打开控制面板"><span class="nav-text">1.1 打开控制面板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-开启Hyper-V服务"><span class="nav-text">1.2 开启Hyper-V服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-按照提示重启电脑并运行Hyper-V服务"><span class="nav-text">1.3 按照提示重启电脑并运行Hyper-V服务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-配置网关和其他项目"><span class="nav-text">2. 配置网关和其他项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-新增虚拟交换机"><span class="nav-text">2.1 新增虚拟交换机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-创建虚拟机"><span class="nav-text">2.2 创建虚拟机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-创建"><span class="nav-text">2.2.1 创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-命名与选择安装位置"><span class="nav-text">2.2.2 命名与选择安装位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-选择虚拟机版本"><span class="nav-text">2.2.3 选择虚拟机版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-分配虚拟机内存"><span class="nav-text">2.2.4 分配虚拟机内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-5-配置虚拟机网络"><span class="nav-text">2.2.5 配置虚拟机网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-6-连接虚拟硬盘-并指定虚拟机硬盘大小"><span class="nav-text">2.2.6 连接虚拟硬盘 并指定虚拟机硬盘大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-7-安装选项"><span class="nav-text">2.2.7 安装选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-8-摘要"><span class="nav-text">2.2.8 摘要</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-已经遇到的问题与解决方法"><span class="nav-text">3. 已经遇到的问题与解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-端口占用且查不到占用的进程问题"><span class="nav-text">3.1 端口占用且查不到占用的进程问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-text">解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-关闭Hyper-V"><span class="nav-text">1. 关闭Hyper-V</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-修改动态端口范围"><span class="nav-text">2. 修改动态端口范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-开启Hyper-V"><span class="nav-text">3. 开启Hyper-V</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Linux系统安装后无法上网"><span class="nav-text">3.2 Linux系统安装后无法上网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-1"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-1"><span class="nav-text">解决方法</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

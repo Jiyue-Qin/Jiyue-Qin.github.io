@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>win10系统自带虚拟机Hyper-V安装linux代替VMware</title>
+    <url>/p/21663/</url>
+    <content><![CDATA[<p>Win10系统自带Hyper-V虚拟机工具，已经不需要额外再安装VM虚拟机，可以更快速的启动虚拟机并占用更少的资源。<br>下面是使用方法与步骤：</p>
+<h1 id="需要准备的工具与软件"><a href="#需要准备的工具与软件" class="headerlink" title="需要准备的工具与软件"></a>需要准备的工具与软件</h1><p>window 10 系统电脑<br>centOS 7 安装镜像文件（或其他Linux系统版本）<br>【centOS7 镜像地址：<a href="http://mirrors.aliyun.com/centos/7/isos/x86_64/" target="_blank" rel="noopener">阿里云镜像</a>、<a href="http://isoredirect.centos.org/centos/" target="_blank" rel="noopener">官网镜像</a>】</p>
+<h1 id="1-windows开启Hyper-V服务"><a href="#1-windows开启Hyper-V服务" class="headerlink" title="1. windows开启Hyper-V服务"></a>1. windows开启Hyper-V服务</h1><h2 id="1-1-打开控制面板"><a href="#1-1-打开控制面板" class="headerlink" title="1.1 打开控制面板"></a>1.1 打开控制面板</h2><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127160120.png" alt="打开控制面板"></p>
+<h2 id="1-2-开启Hyper-V服务"><a href="#1-2-开启Hyper-V服务" class="headerlink" title="1.2 开启Hyper-V服务"></a>1.2 开启Hyper-V服务</h2><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127163604.png" alt="开启服务"></p>
+<h2 id="1-3-按照提示重启电脑并运行Hyper-V服务"><a href="#1-3-按照提示重启电脑并运行Hyper-V服务" class="headerlink" title="1.3 按照提示重启电脑并运行Hyper-V服务"></a>1.3 按照提示重启电脑并运行Hyper-V服务</h2><p>在开始菜单可以找到windows服务选项<br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127164000.png" alt=""><br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127164812.png" alt="Hyper-V 管理器"><br><strong>到这里第一部分已经完成，下面开始配置网络和创建虚拟机。</strong></p>
+<h1 id="2-配置网关和其他项目"><a href="#2-配置网关和其他项目" class="headerlink" title="2. 配置网关和其他项目"></a>2. 配置网关和其他项目</h1><h2 id="2-1-新增虚拟交换机"><a href="#2-1-新增虚拟交换机" class="headerlink" title="2.1 新增虚拟交换机"></a>2.1 新增虚拟交换机</h2><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201127165839.png" alt=""></p>
+<p><strong>点击创建虚拟交换机</strong></p>
+<p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130093837.png" alt=""></p>
+<p><strong>创建新的虚拟网络交换机（能够上外网的）</strong><br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130094202.png" alt=""><br>① 创建新的虚拟网络交换机，重命名该网络交换机<br>② 选择外部网络，选择要给虚拟机试用的网卡（一般当前计算机网卡），勾选 □允许管理操作系统共享此网络适配器<br>③ 点击确定完成新建</p>
+<span id = "jump" />
+
+<h2 id="2-2-创建虚拟机"><a href="#2-2-创建虚拟机" class="headerlink" title="2.2 创建虚拟机"></a>2.2 创建虚拟机</h2><h3 id="2-2-1-创建"><a href="#2-2-1-创建" class="headerlink" title="2.2.1 创建"></a>2.2.1 创建</h3><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130100746.png" alt=""><br>点击 新建=&gt;虚拟机 按提示点击 下一步</p>
+<h3 id="2-2-2-命名与选择安装位置"><a href="#2-2-2-命名与选择安装位置" class="headerlink" title="2.2.2 命名与选择安装位置"></a>2.2.2 命名与选择安装位置</h3><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101128.png" alt=""></p>
+<h3 id="2-2-3-选择虚拟机版本"><a href="#2-2-3-选择虚拟机版本" class="headerlink" title="2.2.3 选择虚拟机版本"></a>2.2.3 选择虚拟机版本</h3><p><strong>这里需要注意下，按照官网说法，第二代是支持CentOS7系统的，但是我用二代系统安装centOS7之后并不能正常使用，所以保险起见还是建议使用一代虚拟机版本</strong><br>选择后点击下一步<br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101527.png" alt=""></p>
+<h3 id="2-2-4-分配虚拟机内存"><a href="#2-2-4-分配虚拟机内存" class="headerlink" title="2.2.4 分配虚拟机内存"></a>2.2.4 分配虚拟机内存</h3><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101635.png" alt=""></p>
+<h3 id="2-2-5-配置虚拟机网络"><a href="#2-2-5-配置虚拟机网络" class="headerlink" title="2.2.5 配置虚拟机网络"></a>2.2.5 配置虚拟机网络</h3><p>在连接中选择刚刚配置的网络交换机（我这里命名为centos7）<br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130101810.png" alt=""></p>
+<h3 id="2-2-6-连接虚拟硬盘-并指定虚拟机硬盘大小"><a href="#2-2-6-连接虚拟硬盘-并指定虚拟机硬盘大小" class="headerlink" title="2.2.6 连接虚拟硬盘 并指定虚拟机硬盘大小"></a>2.2.6 连接虚拟硬盘 并指定虚拟机硬盘大小</h3><p><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130102049.png" alt=""></p>
+<h3 id="2-2-7-安装选项"><a href="#2-2-7-安装选项" class="headerlink" title="2.2.7 安装选项"></a>2.2.7 安装选项</h3><p>我这里选择的是在本地安装自己下载的镜像文件<br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130102210.png" alt=""></p>
+<h3 id="2-2-8-摘要"><a href="#2-2-8-摘要" class="headerlink" title="2.2.8 摘要"></a>2.2.8 摘要</h3><p>浏览摘要确认硬件与安装信息，点击安装<br>安装完成后出现如下菜单与项目：<br><img data-src="https://gitee.com/qinjiyue/qinjiyue/raw/img_repo/img/20201130102534.png" alt=""><br>到这里，linux虚拟机镜像已经安装完成，下一步就是Linux系统的安装（有基础的可以安装自己喜欢的linux版本，我安装的是CentOS 7）</p>
+<h1 id="3-已经遇到的问题与解决方法"><a href="#3-已经遇到的问题与解决方法" class="headerlink" title="3. 已经遇到的问题与解决方法"></a>3. 已经遇到的问题与解决方法</h1><h2 id="3-1-端口占用且查不到占用的进程问题"><a href="#3-1-端口占用且查不到占用的进程问题" class="headerlink" title="3.1 端口占用且查不到占用的进程问题"></a>3.1 端口占用且查不到占用的进程问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>本地启动IDEA做Java开发时，启动tomcat会出现一个端口占用的错误：<br>tomcat启动报错：Address localhost:1099 is already in use！</p>
+<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>这里安装的Hyper-V虚拟机会默认分配一些端口以便虚拟机使用。<br>默认启动端口: 1024 端口数: 13977<br>而由于tomcat默认的监视端口用到1099，所以会引起端口占用且查不到占用进程的问题。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>修改Hyper-V动态端口范围。参考博客：<a href="https://www.cnblogs.com/cheney256/articles/13375989.html" target="_blank" rel="noopener">雪域熊猫：修改Hyper-V动态端口范围</a></p>
+<p>以下步骤需要使用管理员权限操作cmd指令</p>
+<h4 id="1-关闭Hyper-V"><a href="#1-关闭Hyper-V" class="headerlink" title="1. 关闭Hyper-V"></a>1. 关闭Hyper-V</h4><p>关闭Hyper-V:</p>
+<blockquote>
+<p>dism.exe /Online /Disable-Feature:Microsoft-Hyper-V</p>
+</blockquote>
+<h4 id="2-修改动态端口范围"><a href="#2-修改动态端口范围" class="headerlink" title="2. 修改动态端口范围"></a>2. 修改动态端口范围</h4><blockquote>
+<p>#设置动态端口TCP范围<br>netsh int ipv4 set dynamicport tcp start=51555 num=13980</p>
+</blockquote>
+<blockquote>
+<p>#设置动态端口UDP范围<br>netsh int ipv4 set dynamicport udp start=51555 num=13980</p>
+</blockquote>
+<p>然后检查修改结果</p>
+<blockquote>
+<p>#查看动态端口范围<br>netsh int ipv4 show dynamicport tcp</p>
+</blockquote>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">协议 tcp 动态端口范围</span><br><span class="line">------------------</span><br><span class="line">启动端口 : 51555</span><br><span class="line">端口数 : 13980</span><br></pre></td></tr></table></figure>
+<h4 id="3-开启Hyper-V"><a href="#3-开启Hyper-V" class="headerlink" title="3. 开启Hyper-V"></a>3. 开启Hyper-V</h4><blockquote>
+<p>#启用Hyper-V<br>dism.exe /Online /Enable-Feature:Microsoft-Hyper-V /All<br>输出结果如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.18362.1</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.18363.752</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[100.0%]</span><br><span class="line">操作成功完成。</span><br><span class="line">重新启动 Windows 以完成该操作。</span><br><span class="line">是否立即重新启动计算机? (Y&#x2F;N)</span><br></pre></td></tr></table></figure>
+<p>根据提示按 ‘Y’ 进行系统重启，完成配置。</p>
+<h2 id="3-2-Linux系统安装后无法上网"><a href="#3-2-Linux系统安装后无法上网" class="headerlink" title="3.2 Linux系统安装后无法上网"></a>3.2 Linux系统安装后无法上网</h2><h3 id="问题原因-1"><a href="#问题原因-1" class="headerlink" title="问题原因"></a>问题原因</h3><p>可能是Linux系统的连接方式设置错误，或者是网络虚拟机配置问题</p>
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>如果时Linux系统的连接方式设置错误，请开启Linux系统网络连接，并将连接方式改为桥接模式；</li>
+<li>如果是网络虚拟机配置问题请重新按照教程<a href="#jump">2.1</a>部分重新安装网络交换机。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>软件</tag>
+        <tag>windows</tag>
+        <tag>系统</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>idea2020版spring项目依赖成功导入但报错找不到包的解决方案</title>
     <url>/p/25879/</url>
     <content><![CDATA[<p>最近安装了idea2020版本，在启动springboot的项目时，出现找不到包的情况，再确认maven依赖添加正确，pom文件正确，java文件的improt路径正确后，还是不能正常启动，上网查了下发现不只我一个出现这个问题，百度之后找到问题所在。</p>
